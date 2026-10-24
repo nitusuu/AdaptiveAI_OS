@@ -1,0 +1,12 @@
+services:
+  adaptiveai:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - adaptiveai_data:/app/data
+    restart: unless-stopped
+volumes:
+  adaptiveai_data:
